@@ -4,36 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Horaires | CSAHR Rueil-Malmaison</title>
-  <meta name="description" content="Horaires de tous les cours du CSAHR à Rueil-Malmaison, par discipline, âge et quartier.">
+  <meta name="description" content="Emploi du temps de tous les cours du CSAHR à Rueil-Malmaison, filtrable par discipline, âge et quartier.">
+  <meta name="theme-color" content="#0b1215">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="planning">
   <a class="skip" href="#main">Aller au contenu</a>
-  <div class="page">
-    <header id="site-header"></header>
-    <main id="main">
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero"><div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Horaires</nav>
+      <h1>Emploi du temps</h1>
+      <p>Touchez les pictogrammes pour n'afficher que vos disciplines. Saison 2026-2027, pas de cours pendant les vacances scolaires.</p>
+    </div></section>
 
-      <div id="pictos"></div>
-      <hr class="rule">
-      <div class="inner">
-        <h1 class="page-title">Horaires</h1>
-        <p class="page-lead">Sélectionnez vos critères. Cliquez sur un cours pour voir les tarifs et le contact du professeur.</p>
-        <form class="filters" onsubmit="return false">
-          <label for="f-d">Discipline<select class="input" id="f-d"></select></label>
-          <label for="f-pub">Âge<select class="input" id="f-pub"></select></label>
-          <label for="f-venue">Quartier<select class="input" id="f-venue"></select></label>
-          <p class="count" id="count" aria-live="polite"></p>
-        </form>
-        <div class="week" id="week"></div>
-        <div class="legend" id="legend"></div>
+    <div class="tt-tools"><div class="wrap">
+      <div class="pictos" id="tt-pictos" role="group" aria-label="Filtrer par discipline"></div>
+      <div class="tt-row">
+        <div class="seg" id="tt-pub" role="group" aria-label="Âge">
+          <button type="button" data-v="" aria-pressed="true">Tous âges</button><button type="button" data-v="enfants" aria-pressed="false">Enfants</button><button type="button" data-v="ados" aria-pressed="false">Ados & adultes</button>
+        </div>
+        <label class="sr-only" for="tt-quarter">Quartier</label><select class="input" id="tt-quarter"></select>
+        <button type="button" class="reset" id="tt-reset" hidden>Effacer les filtres</button>
+        <span class="count" id="tt-count" aria-live="polite"></span>
+        <div class="seg views" id="tt-view" role="group" aria-label="Affichage">
+          <button type="button" data-v="grid" aria-pressed="true">Toute la semaine</button><button type="button" data-v="list" aria-pressed="false">Par jour</button>
+        </div>
       </div>
-    </main>
-    <footer id="site-footer"></footer>
-  </div>
+    </div></div>
+    <section class="section" style="padding-top:24px">
+      <div class="wrap" id="tt-box">
+        <div class="tt-scroll"><table class="tt" id="tt-grid"></table><p class="empty" id="tt-empty" hidden>Aucun cours avec ces filtres.</p></div>
+        <div class="listview"><div class="daytabs" id="daytabs" role="group" aria-label="Jour"></div><div id="daylist"></div></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

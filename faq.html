@@ -5,28 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Questions fréquentes | CSAHR Rueil-Malmaison</title>
   <meta name="description" content="Réponses aux questions les plus posées sur le CSAHR : places, paiement, cours d'essai, licence, vacances.">
+  <meta name="theme-color" content="#0b1215">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="faq">
   <a class="skip" href="#main">Aller au contenu</a>
-  <div class="page">
-    <header id="site-header"></header>
-    <main id="main">
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero"><div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Questions</nav>
+      <h1>Foire aux questions</h1>
+      <p>Les réponses aux questions les plus posées. Vous ne trouvez pas ? Écrivez-nous à contact@csahr.com ou sur Messenger.</p>
+    </div></section>
 
-      <div id="pictos"></div>
-      <hr class="rule">
-      <div class="inner">
-        <h1 class="page-title">Foire aux questions</h1>
-        <p class="page-lead">Les réponses aux questions les plus posées. Essayez de trouver la vôtre avant de nous écrire à <a href="mailto:contact@csahr.com">contact@csahr.com</a>.</p>
+    <section class="section">
+      <div class="wrap">
+        <label class="sr-only" for="faq-q">Rechercher une question</label>
+        <input class="input faq-search" id="faq-q" type="search" placeholder="Rechercher : paiement, vacances, licence…">
         <div class="faq" id="faq"></div>
+        <p class="empty" id="faq-none" hidden>Aucune question ne correspond. Écrivez-nous à <a href="mailto:contact@csahr.com">contact@csahr.com</a>.</p>
       </div>
-    </main>
-    <footer id="site-footer"></footer>
-  </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

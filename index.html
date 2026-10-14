@@ -5,45 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CSAHR | Arts martiaux à Rueil-Malmaison</title>
   <meta name="description" content="Le CSAHR est le club multi arts martiaux et sports de combat de Rueil-Malmaison : judo, karaté, aïkido, krav-maga, boxe française, boxe thaï, kick boxing, tai-chi-chuan. Cours d'essai gratuit.">
+  <meta name="theme-color" content="#0b1215">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
   <a class="skip" href="#main">Aller au contenu</a>
-  <div class="page">
-    <header id="site-header"></header>
-    <main id="main">
+  <header id="site-header"></header>
+  <main id="main">
 
-      <div class="intro inner">
-        <h1>Les arts martiaux à Rueil : tu as trouvé ton club !</h1>
-        <p>Le CSAHR est le club multi arts martiaux et sports de combat de Rueil-Malmaison. Il propose des cours pour enfants, ados et adultes, aussi bien pour les débutants que pour les pratiquants confirmés.</p>
-        <p>Venez nous rejoindre ! Le cours d'essai est gratuit.</p>
-      </div>
-      <div class="inner"><div class="slider" id="slider"></div></div>
-      <div id="pictos"></div>
-      <div class="inner">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <p class="kicker">Rueil-Malmaison · depuis 1968</p>
+          <h1>Les arts martiaux à Rueil : tu as trouvé <em>ton club !</em></h1>
+          <p class="lead">Le CSAHR est le club multi arts martiaux et sports de combat de Rueil-Malmaison. Des cours pour enfants, ados et adultes, débutants comme confirmés, avec des professeurs diplômés d'État.</p>
+          <div class="actions">
+            <a class="btn btn--red" href="planning.html">Voir les horaires</a>
+            <a class="btn btn--ghost" href="inscription.html#essai">Cours d'essai gratuit</a>
+          </div>
+          <ul class="stats">
+            <li><b id="fig-members"></b><span>adhérents</span></li>
+            <li><b id="fig-disciplines"></b><span>disciplines</span></li>
+            <li><b id="fig-slots"></b><span>cours par semaine</span></li>
+            <li><b>6</b><span>salles à Rueil</span></li>
+          </ul>
+        </div>
         <section class="finder" aria-labelledby="finder-title">
-          <h2 id="finder-title">Trouver un cours</h2>
+          <h2 id="finder-title">Trouver mon cours</h2>
+          <p>Indiquez un âge et un jour, on vous montre ce qui correspond.</p>
           <form id="finder">
-            <label for="q-d">Discipline<select class="input" id="q-d"></select></label>
-            <label for="q-age">Âge du pratiquant<input class="input" id="q-age" type="number" min="3" max="99" inputmode="numeric" placeholder="ex. 8"></label>
-            <label for="q-day">Jour<select class="input" id="q-day"></select></label>
+            <label class="field" for="q-d">Discipline<select class="input" id="q-d"></select></label>
+            <div class="row">
+              <label class="field" for="q-age">Âge<input class="input" id="q-age" type="number" min="3" max="99" inputmode="numeric" placeholder="ex. 8"></label>
+              <label class="field" for="q-day">Jour<select class="input" id="q-day"></select></label>
+            </div>
           </form>
           <div class="results" id="q-out" aria-live="polite"></div>
         </section>
+      </div>
+    </section>
 
-        <h2 class="big-title" id="actu">Actu</h2>
+    <div class="picto-strip"><nav class="wrap pictos" id="pictos" aria-label="Disciplines"></nav></div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--green)">En ce moment</span><h2 id="today-title">Aujourd'hui au club</h2></div><a class="more" id="today-more" href="planning.html">Voir tout l'emploi du temps</a></div>
+        <div class="today" id="today"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="disciplines">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--orange)">Nos disciplines</span><h2>Dix façons de pratiquer</h2></div><p>Arts martiaux japonais, boxes pieds-poings, self-défense ou art interne : chaque section a son professeur, ses horaires et ses tarifs.</p></div>
+        <div class="dgrid" id="dgrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--blue)">S'inscrire</span><h2>Rejoindre le club</h2></div><a class="more" href="inscription.html">Tout savoir sur l'inscription</a></div>
+        <ol class="steps">
+          <li style="--c:var(--blue)"><h3>Choisis ton cours</h3><p>Repère ta discipline et ton créneau dans les <a href="planning.html">horaires</a>.</p></li>
+          <li style="--c:var(--green)"><h3>Viens essayer</h3><p>Le premier cours est gratuit, sans réservation. Kimono si tu en as un, sinon tenue de sport.</p></li>
+          <li style="--c:var(--yellow)"><h3>Inscris-toi</h3><p>Certificat médical ou questionnaire de santé, photo, et règlement au professeur : chèques, espèces ou Pass+.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="actu">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--teal)">Actu</span><h2>Les dernières nouvelles</h2></div><a class="more" href="https://www.facebook.com/ArtsMartiauxRueil" target="_blank" rel="noopener">Suivre sur Facebook</a></div>
         <div class="news" id="news"></div>
+      </div>
+    </section>
 
-        <h2 class="big-title">Photos</h2>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--navy)">Photos</span><h2>Nos champions</h2></div></div>
         <div class="gallery" id="gallery"></div>
       </div>
-    </main>
-    <footer id="site-footer"></footer>
-  </div>
+    </section>
+
+    <section class="section section--alt" id="lieux">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--green)">Où sommes-nous ?</span><h2>Six salles à Rueil</h2></div></div>
+        <div class="venues" id="venues"></div>
+      </div>
+    </section>
+
+    <section class="cta"><div class="wrap">
+      <div><h2>Le cours d'essai est gratuit</h2><p>Présente-toi simplement au cours de ton choix, dès la reprise des cours.</p></div>
+      <a class="btn btn--red" href="planning.html">Choisir mon cours</a>
+    </div></section>
+  </main>
+  <footer id="site-footer"></footer>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

@@ -4,56 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Le club | CSAHR Rueil-Malmaison</title>
-  <meta name="description" content="Le CSAHR depuis 1968 : présentation, mot du président, professeurs, conseil d'administration, histoire et lieux d'entraînement.">
+  <meta name="description" content="Le CSAHR depuis 1968 : présentation, mot du président, professeurs, conseil d'administration, histoire et salles.">
+  <meta name="theme-color" content="#0b1215">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="club">
   <a class="skip" href="#main">Aller au contenu</a>
-  <div class="page">
-    <header id="site-header"></header>
-    <main id="main">
-
-      <div id="pictos"></div>
-      <hr class="rule">
-      <div class="inner">
-        <h1 class="page-title">Le club</h1>
-        <nav class="club-nav" aria-label="Rubriques du club">
-          <a style="background:var(--orange)" href="#presentation">Présentation</a>
-          <a style="background:var(--blue)" href="#professeurs">Professeurs</a>
-          <a style="background:var(--navy)" href="#conseil">Conseil d'administration</a>
-          <a style="background:var(--yellow)" href="#histoire">Histoire</a>
-          <a style="background:var(--green)" href="#lieux">Où sommes-nous ?</a>
-        </nav>
-
-        <h2 class="tag tag--orange" id="presentation">Présentation du club</h2>
-        <p><i>« Chaque fois que la vie sociale met deux individus face à face, c'est toujours celui qui a confiance en lui qui l'emporte. » – Jeanne Libermann</i></p>
-        <p>La création du CSAHR a répondu avant tout au désir d'une population rueilloise de se doter de centres d'intérêt orientés vers l'animation et le sport. Les bonnes volontés réunies depuis de nombreuses années au sein du club ont permis de créer un ensemble qui dépasse largement ses objectifs initiaux, en résultats nationaux et internationaux comme en fréquentation.</p>
-        <p>Doté de nombreuses disciplines animées par des professeurs indépendants, le CSAHR vous propose avant tout de découvrir un esprit de club fait d'échanges, de compréhension et de respect envers ceux qui partagent votre passion : les arts martiaux. À ce jour, le club regroupe plus de 1 250 adhérents dans 11 disciplines.</p>
-        <h3 class="d-sub">Le mot du président</h3>
-        <div id="president"></div>
-
-        <h2 class="tag tag--blue" id="professeurs">Les professeurs</h2>
-        <div class="people" id="staff"></div>
-
-        <h2 class="tag tag--navy" id="conseil">Conseil d'administration</h2>
-        <div class="people" id="board"></div>
-
-        <h2 class="tag tag--yellow" id="histoire">Histoire du club</h2>
-        <h3 class="d-sub">Maître Raymond Le Brenn, fondateur</h3>
-        <div class="founder" id="founder"></div>
-        <h3 class="d-sub" style="margin-top:24px">Les dates clés</h3>
-        <ol class="history" id="history"></ol>
-
-        <h2 class="tag tag--green" id="lieux">Où sommes-nous ?</h2>
-        <div class="venues-list" id="venues"></div>
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero"><div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Le club</nav>
+      <h1>Le club</h1>
+      <p style="margin-bottom:18px">Plus de 1 250 adhérents, 11 disciplines et un esprit de club fait d'échanges et de respect depuis 1968.</p>
+      <nav class="club-tabs" aria-label="Rubriques">
+        <a style="--c:var(--orange)" href="#presentation">Présentation</a><a style="--c:var(--blue)" href="#professeurs">Professeurs</a>
+        <a style="--c:var(--navy)" href="#conseil">Conseil d'administration</a><a style="--c:var(--yellow)" href="#histoire">Histoire</a><a style="--c:var(--green)" href="#lieux">Où sommes-nous ?</a>
+      </nav>
+    </div></section>
+    <section class="section" id="presentation">
+      <div class="wrap split">
+        <div>
+          <span class="label" style="--c:var(--orange)">Présentation</span>
+          <h2>Un esprit de club</h2>
+          <p class="quote">« Chaque fois que la vie sociale met deux individus face à face, c'est toujours celui qui a confiance en lui qui l'emporte. » Jeanne Libermann</p>
+          <p>La création du CSAHR a répondu au désir des Rueillois de se doter de centres d'intérêt tournés vers l'animation et le sport. Le club a depuis largement dépassé ses objectifs initiaux, en résultats nationaux et internationaux comme en fréquentation.</p>
+          <p>Ses disciplines sont animées par des professeurs indépendants. Le CSAHR vous propose avant tout de découvrir un esprit de club fait d'échanges, de compréhension et de respect envers ceux qui partagent votre passion : les arts martiaux.</p>
+        </div>
+        <div>
+          <span class="label" style="--c:var(--red)">Le mot du président</span>
+          <div id="president"></div>
+        </div>
       </div>
-    </main>
-    <footer id="site-footer"></footer>
-  </div>
+    </section>
+    <section class="section section--alt" id="professeurs">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--blue)">L'équipe</span><h2>Les professeurs</h2></div></div>
+        <div class="people" id="staff"></div>
+      </div>
+    </section>
+    <section class="section" id="conseil">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--navy)">Bénévoles</span><h2>Conseil d'administration</h2></div></div>
+        <div class="people" id="board"></div>
+      </div>
+    </section>
+    <section class="section section--alt" id="histoire">
+      <div class="wrap split">
+        <div>
+          <span class="label" style="--c:var(--yellow)">Le fondateur</span>
+          <h2>Maître Raymond Le Brenn</h2>
+          <div class="founder" id="founder"></div>
+        </div>
+        <div>
+          <span class="label" style="--c:var(--yellow)">Histoire</span>
+          <h2>Les dates clés</h2>
+          <ol class="timeline" id="history"></ol>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="lieux">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--green)">Où sommes-nous ?</span><h2>Nos salles</h2></div></div>
+        <div class="venues" id="venues"></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

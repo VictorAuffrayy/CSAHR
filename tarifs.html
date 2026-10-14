@@ -4,43 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tarifs | CSAHR Rueil-Malmaison</title>
-  <meta name="description" content="Tarifs 2026-2027 de toutes les disciplines du CSAHR à Rueil-Malmaison.">
+  <meta name="description" content="Tarifs 2026-2027 de toutes les disciplines du CSAHR à Rueil-Malmaison, avec calcul selon l'âge.">
+  <meta name="theme-color" content="#0b1215">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="tarifs">
   <a class="skip" href="#main">Aller au contenu</a>
-  <div class="page">
-    <header id="site-header"></header>
-    <main id="main">
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero"><div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Tarifs</nav>
+      <h1>Tarifs 2026-2027</h1>
+      <p>Cotisation annuelle, licence fédérale comprise. Règlement auprès du professeur : chèques, espèces ou Pass+.</p>
+    </div></section>
 
-      <div id="pictos"></div>
-      <hr class="rule">
-      <div class="inner">
-        <h1 class="page-title">Tarifs 2026-2027</h1>
-        <p class="page-lead">Pour obtenir un tarif personnalisé, choisissez la discipline et indiquez votre âge.</p>
-        <section class="calc">
+    <section class="section">
+      <div class="wrap">
+        <section class="calc" aria-labelledby="calc-title">
+          <h2 id="calc-title" style="font-size:1.3rem">Mon tarif</h2>
           <form id="calc">
-            <label for="c-d">Discipline<select class="input" id="c-d"></select></label>
-            <label class="age" for="c-age">Âge<input class="input" id="c-age" type="number" min="3" max="99" inputmode="numeric" placeholder="ans"></label>
+            <label class="field" for="c-d">Discipline<select class="input" id="c-d"></select></label>
+            <label class="field" for="c-age">Âge<input class="input" id="c-age" type="number" min="3" max="99" inputmode="numeric" placeholder="ans"></label>
           </form>
           <div class="calc-out" id="c-out" aria-live="polite"></div>
         </section>
-        <h2 class="tag tag--yellow">Tous les tarifs</h2>
-        <p>Cotisation annuelle, licence fédérale comprise. Règlement auprès du professeur par chèques, espèces ou Pass+ (pas de carte bancaire). Paiement en plusieurs fois possible, à voir avec le professeur.</p>
-        <div class="table-scroll">
-          <table class="tarifs">
-            <thead><tr><th scope="col">Discipline</th><th scope="col">Formule</th><th scope="col">Chèques (prof + club)</th><th scope="col" class="amt">Prix / an</th></tr></thead>
-            <tbody id="price-rows"></tbody>
-          </table>
-        </div>
       </div>
-    </main>
-    <footer id="site-footer"></footer>
-  </div>
+    </section>
+    <section class="section section--alt">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label" style="--c:var(--yellow)">Toutes les disciplines</span><h2>Tous les tarifs</h2></div><p>Le règlement se fait en deux chèques : l'un à l'ordre du professeur, l'autre à l'ordre du C.S.A.H.R. Paiement en plusieurs fois possible.</p></div>
+        <div class="tcards" id="tcards"></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
