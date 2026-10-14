@@ -59,14 +59,19 @@
   function layout() {
     const h = $("#site-header");
     h.className = "header";
+    const link = ([href, label, p]) => `<a href="${href}"${p === page ? ' aria-current="page"' : ""}>${label}</a>`;
     h.innerHTML = `<div class="wrap bar">
-      <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="CSAHR arts martiaux" width="340" height="137"></a>
+      <a class="brand" href="index.html" aria-label="CSAHR arts martiaux, accueil"></a>
       <nav class="nav" id="nav" aria-label="Menu principal">
-        ${NAV.map(([href, label, p]) => `<a href="${href}"${p === page ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
-        <a class="btn btn--red btn--sm" href="inscription.html#essai">Cours d'essai gratuit</a>
+        <div class="nav-l">${NAV.slice(0, 3).map(link).join("")}</div>
+        <span class="nav-gap" aria-hidden="true"></span>
+        <div class="nav-r">${NAV.slice(3).map(link).join("")}<a class="btn btn--red btn--sm" href="inscription.html#essai">Essai gratuit</a></div>
       </nav>
       <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu">${icon("menu")}</button>
     </div>`;
+    const compact = () => h.classList.toggle("small", window.scrollY > 40);
+    window.addEventListener("scroll", compact, { passive: true });
+    compact();
     const nav = $("#nav"), burger = $(".burger");
     const set = (o) => { nav.classList.toggle("open", o); burger.setAttribute("aria-expanded", o); burger.innerHTML = icon(o ? "close" : "menu"); };
     burger.addEventListener("click", () => set(!nav.classList.contains("open")));
