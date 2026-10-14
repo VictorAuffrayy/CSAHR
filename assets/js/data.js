@@ -21,6 +21,28 @@ window.CSAHR = {
     founder: "Raymond Le Brenn",
   },
 
+  /*
+   * Photos : chemin depuis la racine du site (ex. "assets/img/judo.jpg").
+   * Laisser null tant qu'il n'y a pas de photo : la mise en page s'adapte.
+   */
+  photos: {
+    hero: null,
+    club: null,
+    disciplines: {
+      "judo": null,
+      "handi-judo": null,
+      "karate": null,
+      "krav-maga": null,
+      "aikido": null,
+      "boxe-francaise": null,
+      "boxe-thai": null,
+      "kick-boxing": null,
+      "fitness-fighting-move": null,
+      "tai-chi-chuan": null,
+    },
+    teachers: {},
+  },
+
   venues: {
     mimoun: {
       name: "Complexe Alain Mimoun",

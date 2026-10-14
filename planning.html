@@ -2,14 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planning des cours — CSAHR Rueil-Malmaison</title>
-  <meta name="description" content="Le planning hebdomadaire de tous les cours du CSAHR : filtrez par discipline, âge et lieu.">
-  <meta name="theme-color" content="#16181d">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Horaires des cours | CSAHR Rueil-Malmaison</title>
+  <meta name="description" content="Horaires de tous les cours du CSAHR à Rueil-Malmaison, par jour, discipline, âge et salle.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="planning">
@@ -19,25 +18,21 @@
 
     <section class="page-head">
       <div class="wrap">
-        <span class="eyebrow">Saison 2026-2027</span>
-        <h1>Planning des cours</h1>
-        <p class="lead">Tous les créneaux de la semaine. Filtrez par discipline, âge ou lieu, puis cliquez sur un cours pour voir les tarifs et contacter le professeur.</p>
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Horaires</nav>
+        <h1>Horaires des cours</h1>
+        <p class="intro">Saison 2026-2027. Cliquez sur un cours pour voir le tarif et le numéro du professeur.</p>
       </div>
     </section>
-    <section class="section" style="padding-top:32px">
+    <section class="section" style="padding-top:8px">
       <div class="wrap">
-        <div class="planning-toolbar">
-          <div class="row"><span>Famille</span><div class="chips" id="f-family" role="group" aria-label="Famille"></div></div>
-          <div class="row"><span>Âge</span><div class="chips" id="f-age" role="group" aria-label="Âge"></div></div>
-          <div class="row"><span>Affiner</span>
-            <label class="sr-only" for="f-discipline">Discipline</label><select class="input" id="f-discipline"></select>
-            <label class="sr-only" for="f-venue">Lieu</label><select class="input" id="f-venue"></select>
-            <span id="result-count" aria-live="polite" style="text-transform:none;letter-spacing:0;font-weight:500;min-width:0;margin-left:auto"></span>
-          </div>
-        </div>
+        <form class="toolbar" onsubmit="return false">
+          <label for="f-discipline">Discipline<select class="input" id="f-discipline"></select></label>
+          <label for="f-age">Âge<select class="input" id="f-age"></select></label>
+          <label for="f-venue">Salle<select class="input" id="f-venue"></select></label>
+          <p class="count" id="result-count" aria-live="polite"></p>
+        </form>
         <div class="week" id="week"></div>
-        <div class="legend" id="legend" aria-label="Légende"></div>
-        <div class="callout" id="no-slots"></div>
+        <div class="notice" id="no-slots"></div>
       </div>
     </section>
   </main>

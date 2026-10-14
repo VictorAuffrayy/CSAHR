@@ -2,14 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Le club — CSAHR Rueil-Malmaison</title>
-  <meta name="description" content="Histoire du Comité Sportif et Artistique des Hauts de Rueil depuis 1968, et l'équipe de professeurs.">
-  <meta name="theme-color" content="#16181d">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Le club | CSAHR Rueil-Malmaison</title>
+  <meta name="description" content="Histoire du Comité Sportif et Artistique des Hauts de Rueil depuis 1968 et ses professeurs.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="club">
@@ -19,37 +18,33 @@
 
     <section class="page-head">
       <div class="wrap">
-        <span class="eyebrow">Depuis 1968</span>
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Le club</nav>
         <h1>Le club</h1>
-        <p class="lead">Le Comité Sportif et Artistique des Hauts de Rueil est une association loi 1901 qui rassemble aujourd'hui <strong id="club-members"></strong> adhérents autour de <strong id="club-disciplines"></strong> disciplines martiales et de combat.</p>
+        <p class="intro">Le Comité Sportif et Artistique des Hauts de Rueil compte <b id="club-members"></b> adhérents et <b id="club-disciplines"></b> disciplines. Le président est Marc Lopes.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrap two-col">
+      <div class="wrap split" style="align-items:start">
         <div>
-          <span class="eyebrow">Notre histoire</span>
-          <h2>Plus d'un demi-siècle sur les tatamis</h2>
-          <p class="lead">Fondé par Raymond Le Brenn, le club a grandi avec le quartier des Hauts de Rueil. Chaque année, le Trophée qui porte son nom honore un membre qui fait vivre l'esprit du club.</p>
+          <h2>Histoire</h2>
+          <p class="intro">Raymond Le Brenn a fondé le club en 1968. Depuis sa disparition, le Trophée Raymond Le Brenn récompense chaque année un membre du club.</p>
         </div>
         <ol class="timeline" id="timeline"></ol>
       </div>
     </section>
 
-    <section class="section section--tint" id="professeurs">
+    <section class="section section--alt" id="professeurs">
       <div class="wrap">
-        <div class="section-head">
-          <div><span class="eyebrow">L'équipe</span><h2>Les professeurs</h2></div>
-          <p>Des enseignants passionnés, pour beaucoup diplômés d'État, qui accompagnent chaque élève du premier salut à la ceinture noire.</p>
-        </div>
+        <div class="section-title"><h2>Les professeurs</h2></div>
         <div class="teachers" id="teachers"></div>
       </div>
     </section>
 
-    <section class="section section--ink">
-      <div class="wrap cta-band">
-        <div><h2>Rejoignez le club</h2><p>Premier cours gratuit, dans la discipline de votre choix.</p></div>
-        <div class="actions"><a class="btn btn--primary" href="infos.html#essai">Cours d'essai gratuit</a><a class="btn btn--ghost" href="planning.html">Planning</a></div>
+    <section class="trial">
+      <div class="wrap">
+        <div><h2>Envie d'essayer ?</h2><p>Le premier cours est offert.</p></div>
+        <a class="btn" href="infos.html#essai">Contacter un professeur</a>
       </div>
     </section>
   </main>
