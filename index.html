@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSAHR — Arts martiaux à Rueil-Malmaison</title>
+  <meta name="description" content="Judo, karaté, aïkido, krav-maga, boxe française, boxe thaï, tai-chi… Le club multi-arts martiaux de Rueil-Malmaison depuis 1968. Premier cours gratuit.">
+  <meta name="theme-color" content="#16181d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header id="site-header"></header>
+  <main id="main">
+
+    <section class="hero">
+      <svg class="hero-enso" viewBox="0 0 48 48" aria-hidden="true"><path d="M33.5 8.6A18 18 0 1 0 41.6 21" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Rueil-Malmaison · depuis 1968</span>
+          <h1>Trouvez <span>votre</span> art martial.</h1>
+          <p class="lead">Judo, karaté, aïkido, krav-maga, boxes pieds-poings, tai-chi… Dix disciplines, des professeurs diplômés et des cours pour tous, dès 4 ans.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="infos.html#essai">Réserver mon cours d'essai</a>
+            <a class="btn btn--ghost" href="planning.html">Voir le planning</a>
+          </div>
+          <div class="badge-row">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>1er cours offert</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Professeurs diplômés d'État</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Pass+ accepté</span>
+          </div>
+        </div>
+
+        <div class="finder" aria-labelledby="finder-title">
+          <h2 id="finder-title">Quelle discipline pour moi ?</h2>
+          <p>Deux clics pour voir les cours qui vous correspondent.</p>
+          <div class="field">
+            <span class="field-label" id="lbl-age">Âge du pratiquant</span>
+            <div class="chips" id="finder-age" role="group" aria-labelledby="lbl-age"></div>
+          </div>
+          <div class="field">
+            <span class="field-label" id="lbl-fam">Ce qui vous attire</span>
+            <div class="chips" id="finder-family" role="group" aria-labelledby="lbl-fam"></div>
+          </div>
+          <div class="finder-results">
+            <p class="finder-count" id="finder-count" aria-live="polite"></p>
+            <ul class="finder-list" id="finder-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--ink" style="padding:0">
+      <div class="wrap" style="padding-top:8px;padding-bottom:8px">
+        <div class="stats">
+          <div class="stat"><strong id="stat-members"></strong><span>adhérents</span></div>
+          <div class="stat"><strong id="stat-disciplines"></strong><span>disciplines</span></div>
+          <div class="stat"><strong id="stat-slots"></strong><span>créneaux par semaine</span></div>
+          <div class="stat"><strong id="stat-founded"></strong><span>année de création</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="disciplines">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Nos disciplines</span><h2>Dix façons de pratiquer</h2></div>
+          <p>Tradition japonaise, boxes, self-défense ou bien-être : chaque discipline a son professeur, ses horaires et ses tarifs.</p>
+        </div>
+        <div class="filters chips" id="grid-filters" role="group" aria-label="Filtrer par famille"></div>
+        <div class="grid-cards" id="discipline-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">S'inscrire</span><h2>Simple comme un salut</h2></div>
+          <a class="btn btn--ghost btn--sm" href="infos.html">Tarifs & modalités</a>
+        </div>
+        <ol class="steps">
+          <li class="step"><h3>Choisissez</h3><p>Trouvez la discipline et le créneau qui vous conviennent dans le <a href="planning.html">planning</a>.</p></li>
+          <li class="step"><h3>Essayez</h3><p>Venez au premier cours, gratuit et sans engagement. Prévenez le professeur si possible.</p></li>
+          <li class="step"><h3>Inscrivez-vous</h3><p>Certificat médical + cotisation remis au professeur (chèque, espèces ou Pass+).</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap two-col">
+        <div>
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2>Vous vous demandez…</h2>
+          <p class="lead">Les réponses aux questions qu'on nous pose le plus souvent.</p>
+          <a class="btn btn--ghost btn--sm" href="infos.html#faq">Toute la FAQ</a>
+        </div>
+        <div class="faq" id="faq"></div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="lieux">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Où s'entraîner</span><h2>Nos salles à Rueil</h2></div>
+          <p>Les cours ont lieu dans plusieurs dojos et gymnases de la ville. Le lieu est précisé sur chaque créneau.</p>
+        </div>
+        <div class="venues" id="venues"></div>
+      </div>
+    </section>
+
+    <section class="section section--ink">
+      <div class="wrap cta-band">
+        <div>
+          <h2>Le meilleur moyen de savoir, c'est d'essayer.</h2>
+          <p>Votre premier cours est offert, dans la discipline de votre choix.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn--primary" href="infos.html#essai">Cours d'essai gratuit</a>
+          <a class="btn btn--ghost" href="mailto:contact@csahr.com">Nous écrire</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

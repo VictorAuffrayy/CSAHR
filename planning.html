@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planning des cours — CSAHR Rueil-Malmaison</title>
+  <meta name="description" content="Le planning hebdomadaire de tous les cours du CSAHR : filtrez par discipline, âge et lieu.">
+  <meta name="theme-color" content="#16181d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="planning">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header id="site-header"></header>
+  <main id="main">
+
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Saison 2026-2027</span>
+        <h1>Planning des cours</h1>
+        <p class="lead">Tous les créneaux de la semaine. Filtrez par discipline, âge ou lieu, puis cliquez sur un cours pour voir les tarifs et contacter le professeur.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:32px">
+      <div class="wrap">
+        <div class="planning-toolbar">
+          <div class="row"><span>Famille</span><div class="chips" id="f-family" role="group" aria-label="Famille"></div></div>
+          <div class="row"><span>Âge</span><div class="chips" id="f-age" role="group" aria-label="Âge"></div></div>
+          <div class="row"><span>Affiner</span>
+            <label class="sr-only" for="f-discipline">Discipline</label><select class="input" id="f-discipline"></select>
+            <label class="sr-only" for="f-venue">Lieu</label><select class="input" id="f-venue"></select>
+            <span id="result-count" aria-live="polite" style="text-transform:none;letter-spacing:0;font-weight:500;min-width:0;margin-left:auto"></span>
+          </div>
+        </div>
+        <div class="week" id="week"></div>
+        <div class="legend" id="legend" aria-label="Légende"></div>
+        <div class="callout" id="no-slots"></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

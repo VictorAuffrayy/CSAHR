@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarifs & inscription — CSAHR Rueil-Malmaison</title>
+  <meta name="description" content="Tarifs de la saison, cours d'essai gratuit, modalités de paiement, certificat médical et FAQ du CSAHR.">
+  <meta name="theme-color" content="#16181d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="infos">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header id="site-header"></header>
+  <main id="main">
+
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Saison <span data-season></span></span>
+        <h1>Tarifs & inscription</h1>
+        <p class="lead">Tout ce qu'il faut savoir pour commencer : cours d'essai, cotisations, paiement et documents à fournir.</p>
+      </div>
+    </section>
+
+    <section class="section" id="essai">
+      <div class="wrap two-col">
+        <div>
+          <span class="eyebrow">Cours d'essai</span>
+          <h2>Votre premier cours est offert</h2>
+          <p class="lead">Aucune inscription préalable n'est nécessaire. Choisissez un créneau dans le <a href="planning.html">planning</a>, prévenez le professeur et venez en tenue de sport.</p>
+          <ol class="steps" style="grid-template-columns:1fr;margin-top:24px">
+            <li class="step"><h3>Choisissez un créneau</h3><p>Repérez la discipline et l'horaire adaptés à votre âge et votre niveau.</p></li>
+            <li class="step"><h3>Prévenez le professeur</h3><p>Un appel ou un mail suffit pour vous assurer du bon groupe.</p></li>
+            <li class="step"><h3>Venez essayer</h3><p>Tenue de sport, une bouteille d'eau, et c'est parti.</p></li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h2>Contacter un professeur</h2>
+          <ul id="trial-contacts" style="list-style:none;margin:0;padding:0"></ul>
+          <p class="note">Autre discipline ? Écrivez au club : <a href="mailto:contact@csahr.com">contact@csahr.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="tarifs">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Cotisations</span><h2>Tarifs <span data-season></span></h2></div>
+          <p>Cotisation annuelle par discipline. Les tarifs sont mis à jour chaque été pour la saison suivante.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="prices">
+            <thead><tr><th scope="col">Discipline</th><th scope="col">Formule</th><th scope="col">Détail</th><th scope="col" class="amount">Prix / an</th></tr></thead>
+            <tbody id="price-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="paiement">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Modalités</span><h2>Paiement & documents</h2></div></div>
+        <div class="pay">
+          <div class="panel"><h2>Moyens de paiement</h2><p style="margin:0;color:var(--ink-2)">Chèque, espèces ou <strong>Pass+</strong> (Hauts-de-Seine), remis directement au professeur. Les cartes bancaires ne sont pas acceptées.</p></div>
+          <div class="panel"><h2>Deux chèques</h2><p style="margin:0;color:var(--ink-2)">Le règlement par chèque se fait en deux fois : un chèque à l'ordre du professeur, un autre à l'ordre du <strong>C.S.A.H.R.</strong></p></div>
+          <div class="panel"><h2>Certificat médical</h2><p style="margin:0;color:var(--ink-2)">Obligatoire pour obtenir la licence fédérale et être correctement assuré dans votre discipline.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="faq-section">
+      <div class="wrap two-col">
+        <div><span class="eyebrow">FAQ</span><h2 id="faq-title">Questions fréquentes</h2><p class="lead">Une autre question ? <a href="mailto:contact@csahr.com">contact@csahr.com</a></p></div>
+        <div class="faq" id="faq" aria-labelledby="faq-title"></div>
+      </div>
+    </section>
+
+    <section class="section" id="lieux">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Lieux</span><h2>Où s'entraîner</h2></div></div>
+        <div class="venues" id="venues"></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
