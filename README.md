@@ -10,8 +10,8 @@ Site statique : HTML, CSS et JavaScript sans framework ni étape de build. Il fo
 | Page | Rôle |
 | --- | --- |
 | `index.html` | Accueil : sélecteur « Quelle discipline pour moi ? » (âge + type), chiffres clés, grille des disciplines filtrable, parcours d'inscription, FAQ, lieux |
-| `discipline.html?id=…` | Fiche discipline : présentation, horaires, lieux, tarifs et contact direct du professeur pour l'essai gratuit |
-| `planning.html` | Planning hebdomadaire interactif, filtrable par famille, âge, discipline et lieu (jour courant mis en évidence, filtre partageable via l'URL `?d=karate`) |
+| `discipline.html#…` | Fiche discipline : présentation, horaires, lieux, tarifs et contact direct du professeur pour l'essai gratuit |
+| `planning.html` | Planning hebdomadaire interactif, filtrable par famille, âge, discipline et lieu (jour courant mis en évidence, filtre partageable via l'URL `planning.html#karate`) |
 | `infos.html` | Cours d'essai, tableau de tous les tarifs, modalités de paiement, certificat médical, FAQ complète, lieux |
 | `club.html` | Histoire du club et équipe de professeurs |
 

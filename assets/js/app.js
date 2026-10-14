@@ -93,7 +93,7 @@
           </div>
           <div>
             <h2>Disciplines</h2>
-            <ul>${D.disciplines.slice(0, 6).map((d) => `<li><a href="discipline.html?id=${d.id}">${esc(d.name)}</a></li>`).join("")}
+            <ul>${D.disciplines.slice(0, 6).map((d) => `<li><a href="discipline.html#${d.id}">${esc(d.name)}</a></li>`).join("")}
               <li><a href="index.html#disciplines">Toutes les disciplines →</a></li></ul>
           </div>
           <div>
@@ -132,7 +132,7 @@
   function cardHTML(d) {
     const days = [...new Set(d.slots.map((s) => s.day))].map((i) => DAYS[i].slice(0, 3)).join(" · ");
     return `
-      <a class="dcard" href="discipline.html?id=${d.id}" data-family="${d.family}">
+      <a class="dcard" href="discipline.html#${d.id}" data-family="${d.family}">
         <div class="meta"><span class="tag tag--fam">${esc(D.families[d.family])}</span><span class="tag">${esc(d.ages)}</span></div>
         <h3>${esc(d.name)}</h3>
         <p>${esc(d.pitch)}</p>
@@ -190,7 +190,7 @@
       const res = D.disciplines.filter((d) => (!age || audience(d).includes(age)) && (!fam || d.family === fam));
       count.textContent = !age && !fam ? `${res.length} disciplines au choix` : `${res.length} discipline${res.length > 1 ? "s" : ""} pour vous`;
       list.innerHTML = res.length
-        ? res.map((d) => `<li><a href="discipline.html?id=${d.id}"><span><strong>${esc(d.name)}</strong><br><small>${esc(d.ages)}</small></span>${icon("arrow").replace("<svg", '<svg width="18" height="18"')}</a></li>`).join("")
+        ? res.map((d) => `<li><a href="discipline.html#${d.id}"><span><strong>${esc(d.name)}</strong><br><small>${esc(d.ages)}</small></span>${icon("arrow").replace("<svg", '<svg width="18" height="18"')}</a></li>`).join("")
         : `<li class="empty">Aucune discipline ne correspond. Essayez une autre combinaison.</li>`;
     };
     chipGroup($("#finder-age"), AGE_GROUPS, { onChange: (s) => { age = [...s][0] || null; update(); } });
@@ -219,7 +219,7 @@
   }
 
   function discipline() {
-    const id = new URLSearchParams(location.search).get("id");
+    const id = location.hash.slice(1) || new URLSearchParams(location.search).get("id");
     const d = byId(id);
     const main = $("#main");
     if (!d) {
@@ -256,7 +256,7 @@
             <h2 style="font-size:1.6rem;margin-top:40px" id="horaires">Horaires</h2>
             ${d.slots.length
               ? `<ul class="slot-list">${d.slots.map((s) => `<li><span class="d">${DAYS[s.day]}</span><span><span class="t">${range(s)}</span><span class="l">${esc(s.level)}${s.venue ? " · " + esc(D.venues[s.venue].name) : ""}</span></span></li>`).join("")}</ul>
-                 <p class="note">Planning de la saison ${esc(D.club.season)}. <a href="planning.html?d=${d.id}">Voir dans le planning général →</a></p>`
+                 <p class="note">Planning de la saison ${esc(D.club.season)}. <a href="planning.html#${d.id}">Voir dans le planning général →</a></p>`
               : `<div class="callout">${icon("info")}<p>Les créneaux de cette discipline sont communiqués par ${d.phone ? `le professeur au <a href="${tel(d.phone)}"><strong>${d.phone}</strong></a>` : `le club à <a href="mailto:${D.club.email}"><strong>${D.club.email}</strong></a>`}.</p></div>`}
 
             ${venues.length ? `<h2 style="font-size:1.6rem;margin-top:40px">Où ?</h2><div class="venues">${venues.map((v) => `<article class="venue"><h3>${esc(v.name)}</h3><p>${esc(v.address)}</p><a class="link" href="${mapUrl(v)}" target="_blank" rel="noopener">Itinéraire →</a></article>`).join("")}</div>` : ""}
@@ -289,8 +289,7 @@
   }
 
   function planning() {
-    const params = new URLSearchParams(location.search);
-    const state = { d: params.get("d") || "", fam: "", venue: "", age: "" };
+    const state = { d: byId(location.hash.slice(1)) ? location.hash.slice(1) : "", fam: "", venue: "", age: "" };
 
     const sel = $("#f-discipline");
     sel.innerHTML = `<option value="">Toutes les disciplines</option>` + D.disciplines.filter((d) => d.slots.length).map((d) => `<option value="${d.id}">${esc(d.name)}</option>`).join("");
@@ -321,9 +320,7 @@
     const week = $("#week");
 
     function render() {
-      const url = new URL(location);
-      state.d ? url.searchParams.set("d", state.d) : url.searchParams.delete("d");
-      history.replaceState(null, "", url);
+      try { history.replaceState(null, "", state.d ? "#" + state.d : location.pathname); } catch (e) {}
 
       const slots = [];
       D.disciplines.forEach((d) => {
@@ -342,7 +339,7 @@
         total += items.length;
         return `<section class="day${i === today ? " is-today" : ""}" aria-label="${name}">
           <h2>${name}${i === today ? ' <span class="today-pill">Auj.</span>' : ""}</h2>
-          ${items.length ? `<ol>${items.map((s) => `<li><a class="slot" data-family="${s.d.family}" href="discipline.html?id=${s.d.id}">
+          ${items.length ? `<ol>${items.map((s) => `<li><a class="slot" data-family="${s.d.family}" href="discipline.html#${s.d.id}">
             <time>${range(s)}</time><strong>${esc(s.d.name)}</strong><span>${esc(s.level)}</span>${s.venue ? `<span>${esc(D.venues[s.venue].short)}</span>` : ""}</a></li>`).join("")}</ol>` : `<p class="day-empty">Pas de cours</p>`}
         </section>`;
       }).join("");
@@ -353,15 +350,15 @@
     $("#legend").innerHTML = Object.entries(D.families).map(([id, l]) => `<span data-family="${id}"><i></i>${esc(l)}</span>`).join("");
     const noSlots = D.disciplines.filter((d) => !d.slots.length);
     $("#no-slots").innerHTML = noSlots.length
-      ? `${icon("info")}<p>Les horaires de ${noSlots.map((d) => `<a href="discipline.html?id=${d.id}"><strong>${esc(d.name)}</strong></a>`).join(", ")} sont communiqués directement par les professeurs. Retrouvez leurs contacts sur chaque page.</p>`
+      ? `${icon("info")}<p>Les horaires de ${noSlots.map((d) => `<a href="discipline.html#${d.id}"><strong>${esc(d.name)}</strong></a>`).join(", ")} sont communiqués directement par les professeurs. Retrouvez leurs contacts sur chaque page.</p>`
       : "";
   }
 
   function infos() {
     const rows = [];
     D.disciplines.forEach((d) => {
-      if (!d.prices.length) rows.push(`<tr><td><a href="discipline.html?id=${d.id}">${esc(d.name)}</a></td><td colspan="2" style="color:var(--muted)">Sur demande auprès du professeur</td><td class="amount">—</td></tr>`);
-      d.prices.forEach((p, i) => rows.push(`<tr><td>${i === 0 ? `<a href="discipline.html?id=${d.id}">${esc(d.name)}</a>` : ""}</td><td>${esc(p.label)}</td><td style="color:var(--muted)">${esc(p.detail)}</td><td class="amount">${euro(p.amount)}</td></tr>`));
+      if (!d.prices.length) rows.push(`<tr><td><a href="discipline.html#${d.id}">${esc(d.name)}</a></td><td colspan="2" style="color:var(--muted)">Sur demande auprès du professeur</td><td class="amount">—</td></tr>`);
+      d.prices.forEach((p, i) => rows.push(`<tr><td>${i === 0 ? `<a href="discipline.html#${d.id}">${esc(d.name)}</a>` : ""}</td><td>${esc(p.label)}</td><td style="color:var(--muted)">${esc(p.detail)}</td><td class="amount">${euro(p.amount)}</td></tr>`));
     });
     $("#price-rows").innerHTML = rows.join("");
     $("#faq").innerHTML = faqHTML(D.faq);
@@ -387,4 +384,5 @@
   renderHeader();
   renderFooter();
   ({ home, discipline, planning, infos, club })[page]?.();
+  if (page === "discipline") window.addEventListener("hashchange", () => { discipline(); scrollTo(0, 0); });
 })();
