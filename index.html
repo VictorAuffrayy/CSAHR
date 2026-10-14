@@ -4,93 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CSAHR | Arts martiaux à Rueil-Malmaison</title>
-  <meta name="description" content="Judo, karaté, aïkido, krav-maga, boxe française, boxe thaï, kick boxing, tai-chi-chuan à Rueil-Malmaison. Enfants dès 4 ans, ados, adultes. Premier cours gratuit.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Le CSAHR est le club multi arts martiaux et sports de combat de Rueil-Malmaison : judo, karaté, aïkido, krav-maga, boxe française, boxe thaï, kick boxing, tai-chi-chuan. Cours d'essai gratuit.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
   <a class="skip" href="#main">Aller au contenu</a>
-  <header id="site-header"></header>
-  <main id="main">
+  <div class="page">
+    <header id="site-header"></header>
+    <main id="main">
 
-    <section class="hero">
-      <div id="hero-photo"></div>
-      <div class="wrap">
-        <h1>Arts martiaux et sports de combat à Rueil-Malmaison</h1>
-        <p>Judo, karaté, aïkido, krav-maga, boxe française, boxe thaï, kick boxing, tai-chi-chuan… Cours pour enfants dès 4 ans, ados et adultes. Le premier cours est gratuit.</p>
-        <div class="actions">
-          <a class="btn btn--primary" href="infos.html#essai">Faire un cours d'essai</a>
-          <a class="btn btn--light" href="planning.html">Voir les horaires</a>
-        </div>
+      <div class="intro inner">
+        <h1>Les arts martiaux à Rueil : tu as trouvé ton club !</h1>
+        <p>Le CSAHR est le club multi arts martiaux et sports de combat de Rueil-Malmaison. Il propose des cours pour enfants, ados et adultes, aussi bien pour les débutants que pour les pratiquants confirmés.</p>
+        <p>Venez nous rejoindre ! Le cours d'essai est gratuit.</p>
       </div>
-    </section>
+      <div class="inner"><div class="slider" id="slider"></div></div>
+      <div id="pictos"></div>
+      <div class="inner">
+        <section class="finder" aria-labelledby="finder-title">
+          <h2 id="finder-title">Trouver un cours</h2>
+          <form id="finder">
+            <label for="q-d">Discipline<select class="input" id="q-d"></select></label>
+            <label for="q-age">Âge du pratiquant<input class="input" id="q-age" type="number" min="3" max="99" inputmode="numeric" placeholder="ex. 8"></label>
+            <label for="q-day">Jour<select class="input" id="q-day"></select></label>
+          </form>
+          <div class="results" id="q-out" aria-live="polite"></div>
+        </section>
 
-    <div class="finder">
-      <form class="wrap" id="finder">
-        <strong>Trouver un cours</strong>
-        <label for="q-age">Âge<select class="input" id="q-age"></select></label>
-        <label for="q-family">Type de discipline<select class="input" id="q-family"></select></label>
-        <button class="btn btn--primary" type="submit">Afficher</button>
-        <p class="count" id="q-count" aria-live="polite"></p>
-      </form>
-    </div>
+        <h2 class="big-title" id="actu">Actu</h2>
+        <div class="news" id="news"></div>
 
-    <section class="section" id="disciplines">
-      <div class="wrap">
-        <div class="section-title"><h2>Nos disciplines</h2><a href="planning.html">Tous les horaires</a></div>
-        <div class="disciplines" id="discipline-grid"></div>
+        <h2 class="big-title">Photos</h2>
+        <div class="gallery" id="gallery"></div>
       </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="wrap facts3">
-        <div><h3>Premier cours gratuit</h3><p>Venez essayer sans vous inscrire. Prévenez le professeur avant, il vous dira quel cours choisir. <a href="infos.html#essai">Contacts</a></p></div>
-        <div><h3>Inscription sur place</h3><p>La cotisation se règle directement au professeur : chèque, espèces ou Pass+. Pas de carte bancaire. <a href="infos.html#tarifs">Tarifs</a></p></div>
-        <div><h3>Certificat médical</h3><p>Il est demandé pour la licence fédérale et l'assurance. Pensez-y avant la reprise de septembre. <a href="infos.html#faq">Questions fréquentes</a></p></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <div id="club-photo"></div>
-        <div>
-          <h2>Un club de quartier depuis 1968</h2>
-          <p class="intro">Le Comité Sportif et Artistique des Hauts de Rueil a été fondé par Raymond Le Brenn. C'est une association loi 1901 : les cours sont donnés par des professeurs diplômés, dans les salles de la ville.</p>
-          <ul class="figures">
-            <li><b id="fig-members"></b><span>adhérents</span></li>
-            <li><b id="fig-disciplines"></b><span>disciplines</span></li>
-            <li><b id="fig-founded"></b><span>création</span></li>
-          </ul>
-          <a class="btn btn--line" href="club.html">Le club et les professeurs</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="lieux">
-      <div class="wrap">
-        <div class="section-title"><h2>Les salles</h2></div>
-        <div class="venues" id="venues"></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-title"><h2>Questions fréquentes</h2><a href="infos.html#faq">Toutes les questions</a></div>
-        <div class="faq" id="faq"></div>
-      </div>
-    </section>
-
-    <section class="trial">
-      <div class="wrap">
-        <div><h2>Envie d'essayer ?</h2><p>Le premier cours est offert, dans la discipline de votre choix.</p></div>
-        <a class="btn" href="infos.html#essai">Contacter un professeur</a>
-      </div>
-    </section>
-  </main>
-  <footer id="site-footer"></footer>
+    </main>
+    <footer id="site-footer"></footer>
+  </div>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

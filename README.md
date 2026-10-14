@@ -1,31 +1,31 @@
 # CSAHR — refonte du site
 
-Refonte complète (UX + UI) du site du **Comité Sportif et Artistique des Hauts de Rueil**
-(club multi-arts martiaux de Rueil-Malmaison), à partir du contenu de `csahr.com/rueil`.
+Refonte du site du **Comité Sportif et Artistique des Hauts de Rueil** (club multi-arts martiaux de
+Rueil-Malmaison), à partir de [csahr.com/rueil](https://www.csahr.com/rueil/).
+
+La charte graphique d'origine est conservée : bandeau et logo CSAHR, fond photo sombre, colonne blanche
+centrée, menu Montserrat, pictogrammes des disciplines (gris, en couleur au survol), titres Roboto Condensed,
+étiquettes de couleur (orange, bleu, jaune, vert, turquoise) et pied de page sombre.
+Toutes les photos, le logo et les pictogrammes viennent du site d'origine.
 
 Site statique : HTML, CSS et JavaScript sans framework ni étape de build. Il fonctionne tel quel sur GitHub Pages.
 
 ## Pages
 
-| Page | Rôle |
+| Page | Contenu |
 | --- | --- |
-| `index.html` | Accueil : sélecteur « Quelle discipline pour moi ? » (âge + type), chiffres clés, grille des disciplines filtrable, parcours d'inscription, FAQ, lieux |
-| `discipline.html#…` | Fiche discipline : présentation, horaires, lieux, tarifs et contact direct du professeur pour l'essai gratuit |
-| `planning.html` | Planning hebdomadaire interactif, filtrable par famille, âge, discipline et lieu (jour courant mis en évidence, filtre partageable via l'URL `planning.html#karate`) |
-| `infos.html` | Cours d'essai, tableau de tous les tarifs, modalités de paiement, certificat médical, FAQ complète, lieux |
-| `club.html` | Histoire du club et équipe de professeurs |
+| `index.html` | Accroche, diaporama, pictogrammes, recherche de cours (discipline, âge, jour), actualités, photos |
+| `discipline.html#karate` | Fiche discipline : présentation, professeur(s), inscription, tarifs, horaires par salle (plan d'accès, bus), photos |
+| `planning.html` | Planning de la semaine filtrable par discipline, âge et quartier |
+| `tarifs.html` | Calcul du tarif selon la discipline et l'âge, tableau de tous les tarifs |
+| `inscription.html` | Cours d'essai, documents à fournir, dates d'inscription par discipline |
+| `faq.html` | Foire aux questions |
+| `club.html` | Présentation, mot du président, professeurs, conseil d'administration, histoire, lieux |
 
 ## Modifier le contenu
 
-Tout le contenu (disciplines, horaires, tarifs, professeurs, lieux, FAQ, historique) se trouve dans
-**`assets/js/data.js`**. Une modification à cet endroit s'applique à toutes les pages.
-
-Données à compléter (non publiées sur l'ancien site au moment de la reprise) :
-- horaires du judo, handi-judo, boxe thaï, kick boxing et cours du samedi de boxe française ;
-- lieux des cours d'aïkido (mardi/jeudi) et de boxe française ;
-- tarifs de la boxe thaï, du kick boxing et du handi-judo ;
-- adresses exactes de la salle Raymond Le Brenn et du gymnase des Bons Raisins ;
-- téléphone du club : `01 47 51 45 94` (PagesJaunes) ; Facebook indique `01 47 49 39 52`, à vérifier.
+Tout le contenu (disciplines, horaires, tarifs, professeurs, salles, actualités, FAQ, historique) est dans
+**`assets/js/data.js`**. Les images sont dans `assets/img/`.
 
 ## Lancer en local
 
